@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Productos | MEZDI</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/productos.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-mezdi">
+
+        <div class="container">
+
+            <!-- LOGO -->
+
+            <a class="navbar-brand fw-bold" href="index.html">
+                MEZDI
+            </a>
+
+            <!-- BOTON MOVIL -->
+
+            <button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <!-- MENU -->
+
+            <div class="collapse navbar-collapse">
+
+                <ul class="navbar-nav ms-auto align-items-center">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link nav-mezdi active" href="index.html">
+
+                            Inicio
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link nav-mezdi" href="productos.html">
+
+                            Productos
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link nav-mezdi" href="nosotros.html">
+
+                            Nosotros
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link nav-mezdi" href="contacto.html">
+
+                            Contacto
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item ms-3">
+
+                        <a href="carrito.html" class="btn btn-navbar">
+
+                            <i class="bi bi-cart3"></i>
+
+                            Cotización
+
+                            <span id="contadorCarrito" class="badge bg-danger">
+
+                                0
+
+                            </span>
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ==========================
+            HERO
+    =========================== -->
+
+    <header class="hero2 d-flex align-items-center">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                    <span class="text-uppercase text-primary fw-bold display-6">
+
+                        PREMIUM DENIM
+
+                    </span>
+
+                    <h1 class="display-2 fw-bold mt-3">
+
+                        PRODUCTOS
+
+                    </h1>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <section class="container py-5">
+
+        <div class="row">
+
+            <!-- FILTROS -->
+
+            <aside class="col-lg-3">
+
+                <h4 class="fw-bold mb-4">
+
+                    Filtros
+
+                </h4>
+
+                <input type="text" class="form-control mb-4" id="buscar" placeholder="Buscar producto">
+
+                <h5>Categoría</h5>
+
+                <div class="form-check">
+
+                    <input class="form-check-input" type="checkbox" id="denim">
+
+                    <label class="form-check-label">
+
+                        Denim
+
+                    </label>
+
+                </div>
+
+                <div class="form-check">
+
+                    <input class="form-check-input" type="checkbox" id="stretch">
+
+                    <label class="form-check-label">
+
+                        Stretch
+
+                    </label>
+
+                </div>
+
+            </aside>
+
+            <!-- PRODUCTOS -->
+
+            <section class="col-lg-9">
+
+                <div class="row g-4" id="contenedor-productos">
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </section>
+
+
+    <!--=========================================
+        MODAL PRODUCTO
+==========================================-->
+
+    <div class="modal fade" id="modalProducto" tabindex="-1">
+
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+
+            <div class="modal-content rounded-4 border-0 shadow-lg">
+
+                <div class="modal-header">
+
+                    <h3 class="fw-bold">
+
+                        MEZDI INTERNATIONAL DENIM
+
+                    </h3>
+
+                    <button class="btn-close" data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="row">
+
+                        <!-- Imagen -->
+
+                        <div class="col-lg-5">
+
+                            <img id="modalImagen" class="img-fluid rounded shadow">
+
+                        </div>
+
+                        <!-- Información -->
+
+                        <div class="col-lg-7">
+
+                            <h2 id="modalNombre" class="fw-bold">
+                            </h2>
+
+                            <span id="modalCategoria" class="badge bg-primary mb-3">
+                            </span>
+
+                            <hr>
+
+                            <div class="row">
+
+                                <div class="col-6">
+
+                                    <strong>Peso</strong>
+
+                                    <p id="modalPeso"></p>
+
+                                </div>
+
+                                <div class="col-6">
+
+                                    <strong>Composición</strong>
+
+                                    <p id="modalComposicion"></p>
+
+                                </div>
+
+                                <div class="col-6">
+
+                                    <strong>Acabado</strong>
+
+                                    <p id="modalAcabado"></p>
+
+                                </div>
+
+                            </div>
+
+                            <hr>
+
+                            <h5 class="text-center">
+
+                                Cantidad
+
+                            </h5>
+
+                            <div class="d-flex justify-content-center align-items-center gap-3">
+
+                                <button id="btnMenos" class="btn btn-outline-danger btn-lg">
+
+                                    -
+
+                                </button>
+
+                                <h2 id="cantidadMetros">
+
+                                    25
+
+                                </h2>
+
+                                <button id="btnMas" class="btn btn-outline-success btn-lg">
+
+                                    +
+
+                                </button>
+
+                            </div>
+
+                            <p class="text-center text-muted mt-3">
+
+                                Pedido mínimo:
+                                <strong>25 JEANS</strong>
+
+                                <br>
+
+                                Incrementos de
+                                <strong>1</strong>
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">
+
+                        Cancelar
+
+                    </button>
+
+                    <button id="btnAgregarModal" class="btn btn-primary">
+
+                        Agregar a Cotización
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--==================================
+            FOOTER
+===================================-->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row gy-5">
+
+                <!-- Empresa -->
+
+                <div class="col-lg-4">
+
+                    <h2 class="footer-logo">
+
+                        MEZDI
+
+                    </h2>
+
+                    <p class="footer-text">
+
+                        Fabricamos mezclilla premium con tecnología de última
+                        generación para clientes nacionales e internacionales.
+
+                    </p>
+
+                </div>
+
+                <!-- Empresa -->
+
+                <div class="col-lg-2 col-md-4">
+
+                    <h5>
+
+                        Empresa
+
+                    </h5>
+
+                    <ul class="list-unstyled">
+
+                        <li><a href="index.html">Inicio</a></li>
+
+                        <li><a href="nosotros.html">Nosotros</a></li>
+
+                        <li><a href="productos.html">Productos</a></li>
+
+                        <li><a href="contacto.html">Contacto</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Productos -->
+
+                <div class="col-lg-2 col-md-4">
+
+                    <h5>
+
+                        Productos
+
+                    </h5>
+
+                    <ul class="list-unstyled">
+
+                        <li><a href="productos.html">Denim</a></li>
+
+                        <li><a href="productos.html">Stretch</a></li>
+
+                        <li><a href="productos.html">Premium</a></li>
+
+                        <li><a href="productos.html">Colecciones</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Contacto -->
+
+                <div class="col-lg-4 col-md-4">
+
+                    <h5>
+
+                        Contacto
+
+                    </h5>
+
+                    <p>
+
+                        <i class="bi bi-geo-alt-fill"></i>
+
+                        Puebla, México
+
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-telephone-fill"></i>
+
+                        +52 222 000 0000
+
+                    </p>
+
+                    <p>
+
+                        <i class="bi bi-envelope-fill"></i>
+
+                        ventas@mezdi.com
+
+                    </p>
+
+                    <div class="redes">
+
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="text-center copyright">
+
+                © 2026 MEZDI INTERNATIONAL DENIM |
+                Todos los derechos reservados.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!--=========================================
+        CARRITO FLOTANTE
+==========================================-->
+
+    <a href="carrito.html" id="carritoFlotante" class="carrito-flotante">
+
+        <i class="bi bi-cart3"></i>
+
+        <span id="contadorFlotante" class="contador-flotante">
+
+            0
+
+        </span>
+
+    </a>
+
+    <script src="js/productos.js"></script>
+
+    <script src="js/modal-producto.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/alertas.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/carrito-flotante.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+body {
+
+    background: #f4f7fb;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.gracias {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+.card {
+
+    overflow: hidden;
+
+}
+
+.check {
+
+    font-size: 90px;
+
+    color: #198754;
+
+    animation: pop .6s ease;
+
+}
+
+@keyframes pop {
+
+    0% {
+
+        transform: scale(.2);
+
+        opacity: 0;
+
+    }
+
+    100% {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+}
+
+.btn-primary {
+
+    background: #0A4A8A;
+
+    border: none;
+
+}
+
+.btn-primary:hover {
+
+    background: #08335F;
+
+}

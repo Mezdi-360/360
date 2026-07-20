@@ -1,0 +1,429 @@
+/*==============================
+        HERO SECTION
+==============================*/
+
+.hero {
+
+    height: 100vh;
+
+    background-image: linear-gradient(rgba(255, 255, 255, 0.048),
+
+            rgba(255, 255, 255, 0.048)),
+
+        url("../images/banner.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+}
+
+.hero2 {
+
+    height: 80vh;
+
+    background-image: linear-gradient(to top,
+            transparent,
+            white),
+
+        url("../images/FONDO.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+}
+
+
+
+
+/*==========================
+      PRODUCTOS
+===========================*/
+
+.producto-card {
+
+    transition: .4s;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+}
+
+.producto-card img {
+
+    height: 340px;
+
+    object-fit: cover;
+
+    transition: .5s;
+
+}
+
+.producto-card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .18) !important;
+
+}
+
+.producto-card:hover img {
+
+    transform: scale(1.08);
+
+}
+
+.badge {
+
+    z-index: 100;
+
+}
+
+/*==========================
+        HISTORIA
+===========================*/
+
+#nosotros {
+
+    padding: 100px 0;
+
+}
+
+#nosotros img {
+
+    border-radius: 20px;
+
+    transition: .4s;
+
+}
+
+#nosotros img:hover {
+
+    transform: scale(1.02);
+
+}
+
+#nosotros h2 {
+
+    max-width: 600px;
+
+}
+
+#nosotros p {
+
+    line-height: 1.8;
+
+}
+
+
+/*==========================
+        FOOTER
+===========================*/
+
+.footer {
+
+    background: #111111;
+
+    padding: 80px 0 30px;
+
+}
+
+.footer-link {
+
+    color: #d6d6d6;
+
+    text-decoration: none;
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    transition: .3s;
+
+}
+
+.footer-link:hover {
+
+    color: #0d6efd;
+
+    padding-left: 8px;
+
+}
+
+.social-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #222;
+
+    color: white;
+
+    border-radius: 50%;
+
+    margin-right: 10px;
+
+    text-decoration: none;
+
+    transition: .3s;
+
+    font-size: 20px;
+
+}
+
+.social-icon:hover {
+
+    background: #0d6efd;
+
+    transform: translateY(-5px);
+
+}
+
+.footer hr {
+
+    opacity: .15;
+
+}
+
+/*==================================
+        BANNER NOSOTROS
+===================================*/
+
+.banner-nosotros {
+
+    height: 70vh;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, .55),
+            rgba(0, 0, 0, .55)),
+        url("../images/hong\ kong\ \(4\).jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+.banner-nosotros h1 {
+
+    max-width: 700px;
+
+}
+
+.banner-nosotros p {
+
+    max-width: 600px;
+
+}
+
+
+/*==================================
+NAVBAR PREMIUM
+==================================*/
+
+.navbar-mezdi {
+
+    transition: .4s;
+
+    padding: 18px 0;
+
+    background: transparent;
+
+}
+
+.navbar-scroll {
+
+    background: #081f38;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .20);
+
+    padding: 10px 0;
+
+}
+
+.logo-navbar {
+
+    transition: .4s;
+
+}
+
+.logo-navbar:hover {
+
+    transform: scale(1.08);
+
+}
+
+.nav-mezdi {
+
+    position: relative;
+
+    color: #fff !important;
+
+    font-weight: 600;
+
+    margin: 0 10px;
+
+}
+
+.nav-mezdi::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #fff;
+
+    transition: .3s;
+
+}
+
+.nav-mezdi:hover::after {
+
+    width: 100%;
+
+}
+
+.nav-mezdi.active {
+
+    color: #ffffff !important;
+
+}
+
+.nav-mezdi.active::after {
+
+    width: 100%;
+
+}
+
+.btn-navbar {
+
+    background: #0A4A8A;
+
+    color: white;
+
+    border-radius: 40px;
+
+    padding: 10px 22px;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+.btn-navbar:hover {
+
+    background: #0c5cb0;
+
+    color: white;
+
+    transform: translateY(-2px);
+
+}
+
+/*=====================================
+CARRITO FLOTANTE
+=====================================*/
+
+.carrito-flotante {
+
+    position: fixed;
+
+    bottom: 30px;
+
+    right: 30px;
+
+    width: 70px;
+
+    height: 70px;
+
+    background: #0A4A8A;
+
+    color: #fff;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    font-size: 30px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .25);
+
+    z-index: 9999;
+
+    transition: .35s;
+
+}
+
+.carrito-flotante:hover {
+
+    transform: scale(1.1);
+
+    color: #fff;
+
+    background: #08335F;
+
+}
+
+.contador-flotante {
+
+    position: absolute;
+
+    top: -6px;
+
+    right: -6px;
+
+    width: 28px;
+
+    height: 28px;
+
+    background: #dc3545;
+
+    color: #fff;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    border: 2px solid white;
+
+}
